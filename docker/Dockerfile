@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     poppler-utils \
     tesseract-ocr \
+    sqlite3 libsqlite3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Create app user
