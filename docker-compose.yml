@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  crochanger:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        PUID: 1000
+        PGID: 1000
+    container_name: crochanger
+    volumes:
+      - ./data/library:/library
+      - ./data/config:/config
+    ports:
+      - "8296:8296"
+    restart: unless-stopped
